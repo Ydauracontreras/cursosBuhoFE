@@ -1,0 +1,206 @@
+
+.container-perfil-estudiante{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.estudiate-general-perfil{
+     flex: 1;
+    width: 20%;
+    margin: 1em;
+}
+
+ .estudiate-img {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+}
+
+ .estudiate-img a{
+    font-weight: bolder;
+    font-family: ink free;
+    color: white;
+    font-size: 1.2em;
+    align-content: center;
+    padding: .3em;
+ }
+
+.estudiate-img img{
+    width: 60%;
+   /* background: #F7DC6F;*/
+       margin: .5em;
+}
+
+ .estudiante-informacion {
+   width: 80%;
+    flex: 3;
+    align-items: center;
+    border-radius: 5px;
+    background-color: transparent;
+    /*background-color: #ecdc49;*/
+    box-sizing: border-box;
+}
+
+.estudiante-informacion-personal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+h1 {
+    font-size: 2em;
+    font-family: ink free;
+    color: #ffff;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center
+}
+
+.estudiante-informacion-personal input{
+    border-radius: 5px;
+    background:#4DD0E1 ;
+    font-family: ink free;
+    width: 70%;
+    padding: .3em;
+    border: 1px solid #4DD0E1;
+    margin: .3em;
+    color: black;
+    font-weight: bold;
+    font-family: ink free;
+    font-size: 1em;
+    font-weight: bold
+}
+
+
+ .curso-estudiante{
+     flex: 2;
+      width: 30%;
+    background-color: transparent;
+   /* border:2px solid indianred;*/
+   /* backgpround-color: indianred;*/
+    box-sizing: border-box;
+    height: 40vh;
+}
+
+.curso-inscripto{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-content: center; 
+}
+
+.curso-inscripto section{
+    width: 30%;
+      height: 40vh;
+    box-sizing: border-box;
+   
+   /* transform: rotate(5deg);*/
+  /*  border-radius: 2px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    */
+}
+
+.curso-inscripto img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.curso-inscripto label{
+    color:black;
+    font-family: ink free;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+
+img.iconos{
+    width:1em;
+    background-color: transparent;
+    margin: 1px;
+}
+ 
+@media screen and (max-width: 450px) {
+    .container-perfil-estudiante{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    
+}
+
+    .estudiate-general-perfil {
+    margin: 0 auto;
+    width: 100%;
+    background-color: teal;
+    padding: 1em;
+}
+
+
+    .estudiate-img a {
+    font-size: 1em;
+}
+
+.estudiante-informacion{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.curso-inscripto {
+
+background-size: cover;
+   padding: 3em;
+   flex-direction: column;
+   padding-top: 1em;
+};
+
+h1 {
+    font-size: 1.9em;
+}
+.curso-inscripto section {
+
+    margin: 2em;
+    width: 100%;
+}
+    
+  }
+
+
+
+@media (min-width: 451px) and (max-width: 750px){
+    .container-perfil-estudiante{
+    height: auto;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+      
+
+}
+
+   

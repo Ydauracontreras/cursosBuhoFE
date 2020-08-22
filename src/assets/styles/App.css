@@ -1,0 +1,27 @@
+html,body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('../img/fondo_pizarron.svg');
+}
+
+.home-container{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(100% - 40px);
+  height: calc(100vh - 100px);
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,43 @@
+.login-container {
+    background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to top,
+      #414345,
+      #232526
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to top,
+      #414345,
+      #232526
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  img.avatar {
+    border-radius: 50%;
+    width: 15em;
+  }
+  
+  .login-container label {
+    font-size: 1.5em;
+    font-family: ink free;
+    color: aliceblue;
+    font-weight: 600;
+  }
+  
+  button {
+    background: transparent !important;
+    margin-top: 2em;
+    color: #ffffff;
+    border-color: #07c475 !important;
+    font-family: ink free;
+    font-size: 1.5em;
+    font-weight: 600;
+  }

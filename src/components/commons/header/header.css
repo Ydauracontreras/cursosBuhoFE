@@ -1,0 +1,64 @@
+
+.logo-buho-header{
+    width: 8vw;
+    margin-top: 0;
+}
+
+form.form-inline {
+    margin-right: 15vw;
+    
+}
+
+button.btn.btn-outline-success{
+    margin-right: 3vw;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+    background: #232526;
+    font-family: ink free;
+
+    
+}
+a#basic-nav-dropdown {
+    margin-left: 0.5vw;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9); 
+    font-family: ink free;
+    font-size: 1vw;
+}
+input.mr-sm-2.form-control {
+    font-family: ink free;
+}
+.NavDropdown.Item{
+color: white;
+font-family: ink free;
+font-size: 1vw;
+margin-left: 2vw;
+}
+.btn-outline-success {
+    color: #ffffff;
+    border-color: #07c475;
+    font-family: ink free;
+    font-size: 1vw;
+}
+
+.dropdown-menu.show {
+    position: absolute;
+    background-color: rgb(247, 247, 97);
+    height:30vh;
+    width:20vw;
+    -webkit-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+    -moz-transform:rotate(6deg);
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+}
+.header-pin-image{
+    position: relative;
+    width: 6vw;
+    height: 9vh;
+
+}

@@ -1,0 +1,40 @@
+.footer-container{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+   
+}
+.footer-container{
+    
+}
+.footer-columns{
+    display: flex;
+    
+    
+}
+.logo-buho{
+    margin-left: 4vw;
+    margin-top: 5vh;
+    width: 50%;
+    
+}
+.footer-column-One{
+    float: left;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+.footer-column-Two{
+    float: left;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+ul.footer-ul li a{
+    color: white;
+    font-family: ink free;
+
+    text-decoration: none;
+}
+ul.footer-ul li{
+    list-style: none;
+}
