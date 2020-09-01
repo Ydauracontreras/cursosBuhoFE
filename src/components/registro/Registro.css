@@ -1,0 +1,104 @@
+.registro-container {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  align-content: center;
+  color: #ffffff;
+}
+
+.registro-container label {
+  font-family: ink free;
+  font-size: 2.5em;
+  color: #ffff;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.user-name input {
+  width: 300px;
+  height: 50px;
+  border: 2px solid grey;
+  border-radius: 13px;
+}
+
+.register-user-type {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 40px;
+}
+
+label.registro-label {
+  margin-top: 40px;
+}
+
+.register-user-type input {
+  width: 100px;
+  height: 35px;
+  border: 2px solid grey;
+  border-radius: 13px;
+}
+input {
+  width: 400px;
+  height: 50px;
+  border: 2px solid grey;
+  border-radius: 13px;
+}
+
+form#empleado-form {
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  font-family: ink free;
+}
+
+.registro-pais-label {
+}
+
+select {
+  width: 400px;
+  height: 50px;
+  border: 2px solid grey;
+  border-radius: 13px;
+  background: #fff;
+}
+
+option {
+  font-family: ink free;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.register button {
+  height: 50px;
+  width: 350px;
+  background: transparent;
+  border: 2px solid green;
+  border-radius: 6px;
+  margin: 28px;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: ink free;
+  padding: 1px;
+}

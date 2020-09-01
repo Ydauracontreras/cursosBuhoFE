@@ -1,0 +1,21 @@
+.title-container {
+  margin: 1rem;
+  font-family: ink free;
+  color: aliceblue;
+}
+
+.title-container h1 {
+  font-size: 6.5em;
+}
+
+@media screen and (max-width: 450px) {
+  .title-container h1 {
+    font-size: 3em !important;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 750px) {
+  .title-container h1 {
+    font-size: 4.5em !important;
+  }
+}

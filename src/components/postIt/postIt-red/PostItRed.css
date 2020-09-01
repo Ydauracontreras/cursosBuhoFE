@@ -1,0 +1,21 @@
+.container-red-postit {
+  background-image: url(../img/postIt-red.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 30vh;
+  width: 20vw;
+  position: relative;
+}
+
+@media screen and (max-width: 450px) {
+  .container-red-postit {
+    width: 100%;
+    height: 46vh;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1381px) {
+  .container-red-postit {
+    width: 20vw;
+  }
+}
