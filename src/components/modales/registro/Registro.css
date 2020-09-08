@@ -1,9 +1,22 @@
+.registro-dialog {
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #414345,
+    #232526
+  );
+}
 .registro-container {
   width: 100%;
   justify-content: center;
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  /*display: flex;*/
+  /*flex-direction: column;*/
   background: #232526; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
@@ -16,12 +29,13 @@
     #232526
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   align-content: center;
+  background-color: #232526;
   color: #ffffff;
 }
 
 .registro-container label {
   font-family: ink free;
-  font-size: 2.5em;
+  font-size: 1em;
   color: #ffff;
 }
 
