@@ -1,9 +1,10 @@
-import axios from "axios";
+import restAPI from "../_helpers/api.calls";
+import { prettyDOM } from "@testing-library/react";
+import { config } from "../../constants";
 
 export default class CategoriaService {
-  baseUrl = " https://cursos-api-app.herokuapp.com/api/categorias";
 
   getAll() {
-    return axios.get(this.baseUrl).then((res) => res.data);
+    return restAPI.get("/api/categorias").then((res) => res.data);
   }
 }

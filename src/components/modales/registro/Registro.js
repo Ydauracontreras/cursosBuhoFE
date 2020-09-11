@@ -12,9 +12,9 @@ import { TriStateCheckbox } from 'primereact/tristatecheckbox';
 import '../Modales.css';
 import Calendario from '../../Calendar';
 import { RadioButtons } from '../../RadioButtons';
-import {AuthenticationService} from "../../service/AuthenticationService";
+import { AuthenticationService } from "../../service/AuthenticationService";
 import "./Registro.css";
-import {AlertService} from "../../service/AlertService"
+import { AlertService } from "../../service/AlertService"
 
 export default class Registro extends Component {
 
@@ -25,7 +25,7 @@ export default class Registro extends Component {
             usuario: {
                 userType: null,
                 fullName: null,
-                country: null,
+                country: 32,
                 identificationType: null,
                 identification: null,
                 birthDate: null,
@@ -33,9 +33,9 @@ export default class Registro extends Component {
                 password: null,
             },
         };
-        
-        
-        this.save = this.save.bind(this);
+
+
+        this.registrar = this.registrar.bind(this);
         this.items = [
             {
                 label: 'Registrarse',
@@ -46,9 +46,9 @@ export default class Registro extends Component {
 
     }
 
-
-    save() {
-        
+    registrar() {
+        //console.log('info usuario')
+        //console.log(this.state.usuario)
         AuthenticationService.register(this.state.usuario).then((data) => {
             AlertService.success('Registrade con exito!');
             this.setState({
@@ -56,7 +56,7 @@ export default class Registro extends Component {
                 usuario: {
                     userType: null,
                     fullName: null,
-                    country: null,
+                    country: 32,
                     identificationType: null,
                     identification: null,
                     birthDate: null,
@@ -127,7 +127,7 @@ export default class Registro extends Component {
                             </div>
                             <div className="form-group">
 
-                                <label className="Registro-label">aaaTipo Usuario:</label>
+                                <label className="Registro-label">Tipo Usuario:</label>
                                 <div className="register-user-type">
                                     <input
                                         type="radio"
@@ -145,7 +145,7 @@ export default class Registro extends Component {
                                     />
                                     <label htmlFor="rb1" className="p-radiobutton-label">
                                         Estudiante
-            </label>
+                                    </label>
 
                                     <input
                                         type="radio"
@@ -163,7 +163,7 @@ export default class Registro extends Component {
                                     />
                                     <label htmlFor="rb1" className="p-radiobutton-label">
                                         Docente
-            </label>
+                                    </label>
                                 </div>
                             </div>
                             <div className="form-group">
@@ -172,6 +172,14 @@ export default class Registro extends Component {
                                     value={this.state.usuario.country}
                                     className=""
                                     placeholder="pais"
+                                    onChange={(e) => {
+                                        let val = e.target.value;
+                                        this.setState((prevState) => {
+                                            let usuario = Object.assign({}, prevState.usuario);
+                                            usuario.country = val;
+                                            return { usuario };
+                                        });
+                                    }}
                                 >
                                     <option value="032">Argentina</option>
                                     <option value="068">Venezuela</option>
@@ -179,31 +187,13 @@ export default class Registro extends Component {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label className="registro-label">Tipo de Documento:</label>
-                                <div className="register-user-type">
+                                <label className="Registro-label">Tipo Documento:</label>
+                                <div>
                                     <input
                                         type="radio"
-                                        inputId="rb2"
-                                        name="Pasaporte"
-                                        value="Pasaporte"
-                                        onChange={(e) => {
-                                            let val = e.target.value;
-                                            this.setState((prevState) => {
-                                                let usuario = Object.assign({}, prevState.usuario);
-                                                usuario.identificationType = val;
-                                                return { usuario };
-                                            });
-                                        }}
-                                    />
-                                    <label htmlFor="rb1" className="p-radiobutton-label">
-                                        Pasaporte
-                                    </label>
-
-                                    <input
-                                        type="radio"
-                                        inputId="rb2"
-                                        name="Docente"
-                                        value="DOCENTE"
+                                        inputId="rb1"
+                                        name="DNI"
+                                        value="DNI"
                                         onChange={(e) => {
                                             let val = e.target.value;
                                             this.setState((prevState) => {
@@ -215,7 +205,24 @@ export default class Registro extends Component {
                                     />
                                     <label htmlFor="rb1" className="p-radiobutton-label">
                                         DNI
-            </label>
+                                    </label>
+                                    <input
+                                        type="radio"
+                                        inputId="rb2"
+                                        name="Pasaporte"
+                                        value="PASAPORTE"
+                                        onChange={(e) => {
+                                            let val = e.target.value;
+                                            this.setState((prevState) => {
+                                                let usuario = Object.assign({}, prevState.usuario);
+                                                usuario.identificationType = val;
+                                                return { usuario };
+                                            });
+                                        }}
+                                    />
+                                    <label htmlFor="rb2" className="p-radiobutton-label">
+                                        Pasaporte
+                                    </label>
                                 </div>
 
                                 <label htmlFor="identification">Documento</label>
@@ -234,13 +241,22 @@ export default class Registro extends Component {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="identification">Fecha de Nacimiento</label>
-                                <Calendario />
+                                <Calendar value={this.state.usuario.birthDate} onChange={(e) => {
+
+                                    let val = e.value;
+                                    this.setState((prevState) => {
+                                        let usuario = Object.assign({}, prevState.usuario);
+                                        usuario.birthDate = val;
+                                        return { usuario };
+                                    });
+                                }} showIcon={true} />
+
                             </div>
                         </form>
 
                         <div className="form-group">
-                            <button label="Guardar" onClick={this.save}>
-                                Registrarse!{" "}
+                            <button label="Guardar" onClick={this.registrar}>
+                                Registrate!
                             </button>
                         </div>
                     </div>
@@ -253,8 +269,7 @@ export default class Registro extends Component {
 
     showRegistrationDialog() {
         this.setState({
-            visible: true,
-
+            visible: true
         });
 
     }

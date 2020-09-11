@@ -17,11 +17,12 @@ const restAPI = axios.create({
 restAPI.interceptors.request.use((config) => {
     // obtengo el usuario en el localStorage
     let currentUser = AuthenticationService.currentUser();
-
-    console.log(currentUser);
+    
+    //si hay user, le pongo el token
     if (currentUser && currentUser.token) {
         set(config, 'headers.token', currentUser.token);
     }
+
     return config;
 });
 
@@ -32,19 +33,22 @@ restAPI.interceptors.response.use(function (response) {
 }, function (error) {
     // The request was made and the server responded with a status code
     // that falls out of the range of 2xx
-    console.log(error);
+    console.log(error.response.status);
 
     //Tiro Cartelito
     AlertService.error(error.response.data.message === '' ? error.response.data.error : error.response.data.message);
 
-    if (401 === error.response.status) {
+    if (error.response.status === 401) {
 
-        // auto logout if 401 response returned from api
-        if (this.authenticationService.currentUserValue) {
-            this.authenticationService.logout();
-            window.location.reload(true);
+        // si estoy autenticado, hago logout despues de la llamada a la API
+        // y navego al home(o a la ruta login si hay, aca es un dialog)
+        if (AuthenticationService.isAuthenticated()) {
+            AuthenticationService.logout();
+            window.location = '/';
+            //window.location.reload(true);
+            
         }
-        window.location = '/login';
+        return Promise.reject(error);
     } else {
 
         return Promise.reject(error);

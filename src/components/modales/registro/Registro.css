@@ -70,6 +70,15 @@ label.registro-label {
   border: 2px solid grey;
   border-radius: 13px;
 }
+
+
+.register-identification-type {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 40px;
+}
+
 input {
   width: 400px;
   height: 50px;

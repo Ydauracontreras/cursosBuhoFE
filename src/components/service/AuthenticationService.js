@@ -9,7 +9,7 @@ export const AuthenticationService = {
             .then((res) => {
                 //despues de loguear ok, lo guardo en el localStorage
                 localStorage.setItem('currentUser', JSON.stringify(res.data));
-                window.location = '/home';
+                return res.data;
             }
             );
     },
@@ -21,10 +21,7 @@ export const AuthenticationService = {
 
     // limpio al currentUser del localStorage
     logout: () => {
-
         localStorage.removeItem('currentUser');
-        //voy al home
-        window.location = '/home';
     },
 
     // checkeo si esta autenticado
@@ -33,7 +30,7 @@ export const AuthenticationService = {
         //si el token esta expirado el server nos dara un 401
         //para evitar ir al server se puede leer el token del user
         //lodearlo como JWT y revisar si esta expirado del lado del cliente.
-        return this.currentUser() != null;
+        return AuthenticationService.currentUser() != null && AuthenticationService.currentUser() != undefined;
 
     },
 
