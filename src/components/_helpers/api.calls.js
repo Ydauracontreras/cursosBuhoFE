@@ -12,8 +12,12 @@ const restAPI = axios.create({
     baseURL: config.url.API_BASE_URL
 })
 
+//ejemplo cliente api spotify
+const spotifyAPI = axios.create({
+    baseURL: "http://api.spotify"
+})
 
-
+//interceptor para el momendo de enviar UN request
 restAPI.interceptors.request.use((config) => {
     // obtengo el usuario en el localStorage
     let currentUser = AuthenticationService.currentUser();
@@ -27,6 +31,7 @@ restAPI.interceptors.request.use((config) => {
 });
 
 // Error Interceptor!(y 401)
+//Interceptor de Respuestas
 restAPI.interceptors.response.use(function (response) {
 
     return response;
