@@ -10,6 +10,7 @@ import Buho from "../../../assets/img/logo_buho.svg";
 import "../header/header.css";
 import Login from "../../modales/login/Login";
 import Registro from "../../modales/registro/Registro.js";
+import Categoria from "../../categorias/Categoria";
 
 const HeaderPrueba = () => {
   // function handleClick(){
@@ -28,10 +29,7 @@ const HeaderPrueba = () => {
               src={Pin}
               alt="header-pin image"
             ></img>
-            <NavDropdown.Item href="./categorias">Categoria 1</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Categoria 2</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Categoria 3</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Categoria 4</NavDropdown.Item>
+            <Categoria></Categoria>
           </NavDropdown>
         </Nav>
         <Form inline>

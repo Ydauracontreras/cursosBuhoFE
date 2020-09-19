@@ -12,7 +12,9 @@ import { TriStateCheckbox } from 'primereact/tristatecheckbox';
 import '../Modales.css';
 import Calendario from '../../Calendar';
 import { RadioButtons } from '../../RadioButtons';
-
+import { AuthenticationService } from "../../service/AuthenticationService";
+import "./Registro.css";
+import { AlertService } from "../../service/AlertService"
 
 export default class Registro extends Component {
 
@@ -20,15 +22,49 @@ export default class Registro extends Component {
         super();
         this.state = {
             visible: false,
+            usuario: {
+                userType: null,
+                fullName: null,
+                country: 32,
+                identificationType: null,
+                identification: null,
+                birthDate: null,
+                email: null,
+                password: null,
+            },
         };
+
+
+        this.registrar = this.registrar.bind(this);
         this.items = [
             {
                 label: 'Registrarse',
-                command: () => { this.showSaveDialog() }
+                command: () => { this.showRegistrationDialog() }
             },
         ]
 
 
+    }
+
+    registrar() {
+        //console.log('info usuario')
+        //console.log(this.state.usuario)
+        AuthenticationService.register(this.state.usuario).then((data) => {
+            AlertService.success('Registrade con exito!');
+            this.setState({
+                visible: false,
+                usuario: {
+                    userType: null,
+                    fullName: null,
+                    country: 32,
+                    identificationType: null,
+                    identification: null,
+                    birthDate: null,
+                    email: null,
+                    password: null,
+                },
+            });
+        });
     }
 
     render() {
@@ -37,60 +73,203 @@ export default class Registro extends Component {
         return (
             <div  >
 
-                <a><Menubar model={this.items} /></a>
+                <Menubar model={this.items} />
                 <Dialog header="Registro" visible={this.state.visible} footer={this.footer} style={{ width: "30%", height: "80%" }} modal={true} onHide={() => this.setState({ visible: false })}>
-                    <form id="registro">
+                    <div className="registro-container">
+                        <form id="empleado-form" className="registro-dialog">
+                            <div className="form-group">
+                                <label htmlFor="nombre">Nombre:</label>
+                                <input
+                                    value={this.state.usuario.fullName}
+                                    id="fullName"
+                                    onChange={(e) => {
+                                        let val = e.target.value;
+                                        this.setState((prevState) => {
+                                            let usuario = Object.assign({}, prevState.usuario);
+                                            usuario.fullName = val;
+                                            return { usuario };
+                                        });
+                                    }}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="identification">Correo:</label>
+                                <input
+                                    value={this.state.usuario.email}
+                                    id=" email"
+                                    type="email"
+                                    onChange={(e) => {
+                                        let val = e.target.value;
+                                        this.setState((prevState) => {
+                                            let usuario = Object.assign({}, prevState.usuario);
+                                            usuario.email = val;
+                                            return { usuario };
+                                        });
+                                    }}
+                                />
+                            </div>
+                            <div className="form-group">
 
-                        <div>
-                            <label className='Registro-label'>Ingresa tu nombre Completo:</label>
-                            <input className='col-12' placeholder="Nombre"></input>
+                                <label htmlFor="identification">Contraseña:</label>
+                                <input
+                                    value={this.state.usuario.password}
+                                    id="password"
+                                    type="password"
+                                    onChange={(e) => {
+                                        let val = e.target.value;
+                                        this.setState((prevState) => {
+                                            let usuario = Object.assign({}, prevState.usuario);
+                                            usuario.password = val;
+                                            return { usuario };
+                                        });
+                                    }}
+                                />
+                            </div>
+                            <div className="form-group">
 
-                            <label className='Registro-label'>Selecciona tu Pais:</label>
-                            <select value='' className='col-12' placeholder="pais">
-                                <option value=''>Argentina</option>
-                                <option value=''>Venezuela</option>
-                                <option value=''>Estados Unidos</option>
+                                <label className="Registro-label">Tipo Usuario:</label>
+                                <div className="register-user-type">
+                                    <input
+                                        type="radio"
+                                        inputId="rb2"
+                                        name="Estudiante"
+                                        value="ESTUDIANTE"
+                                        onChange={(e) => {
+                                            let val = e.target.value;
+                                            this.setState((prevState) => {
+                                                let usuario = Object.assign({}, prevState.usuario);
+                                                usuario.userType = val;
+                                                return { usuario };
+                                            });
+                                        }}
+                                    />
+                                    <label htmlFor="rb1" className="p-radiobutton-label">
+                                        Estudiante
+                                    </label>
 
-                            </select>
-                            <label className='Registro-label'>Tipo de Documento:</label>
-                            <select value='' className='col-12' placeholder="pais">
-                                <option value=''>DNI</option>
-                                <option value=''>Pasaporte</option>
+                                    <input
+                                        type="radio"
+                                        inputId="rb2"
+                                        name="Docente"
+                                        value="DOCENTE"
+                                        onChange={(e) => {
+                                            let val = e.target.value;
+                                            this.setState((prevState) => {
+                                                let usuario = Object.assign({}, prevState.usuario);
+                                                usuario.userType = val;
+                                                return { usuario };
+                                            });
+                                        }}
+                                    />
+                                    <label htmlFor="rb1" className="p-radiobutton-label">
+                                        Docente
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="Registro-pais-label">Selecciona tu Pais:</label>
+                                <select
+                                    value={this.state.usuario.country}
+                                    className=""
+                                    placeholder="pais"
+                                    onChange={(e) => {
+                                        let val = e.target.value;
+                                        this.setState((prevState) => {
+                                            let usuario = Object.assign({}, prevState.usuario);
+                                            usuario.country = val;
+                                            return { usuario };
+                                        });
+                                    }}
+                                >
+                                    <option value="032">Argentina</option>
+                                    <option value="068">Venezuela</option>
+                                    <option value="152">Estados Unidos</option>
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label className="Registro-label">Tipo Documento:</label>
+                                <div>
+                                    <input
+                                        type="radio"
+                                        inputId="rb1"
+                                        name="DNI"
+                                        value="DNI"
+                                        onChange={(e) => {
+                                            let val = e.target.value;
+                                            this.setState((prevState) => {
+                                                let usuario = Object.assign({}, prevState.usuario);
+                                                usuario.identificationType = val;
+                                                return { usuario };
+                                            });
+                                        }}
+                                    />
+                                    <label htmlFor="rb1" className="p-radiobutton-label">
+                                        DNI
+                                    </label>
+                                    <input
+                                        type="radio"
+                                        inputId="rb2"
+                                        name="Pasaporte"
+                                        value="PASAPORTE"
+                                        onChange={(e) => {
+                                            let val = e.target.value;
+                                            this.setState((prevState) => {
+                                                let usuario = Object.assign({}, prevState.usuario);
+                                                usuario.identificationType = val;
+                                                return { usuario };
+                                            });
+                                        }}
+                                    />
+                                    <label htmlFor="rb2" className="p-radiobutton-label">
+                                        Pasaporte
+                                    </label>
+                                </div>
 
-                            </select>
-                            <label className='Registro-label'>Numero de Documento:</label>
-                            <input className='col-12' placeholder="Ej: 20123654"></input>
+                                <label htmlFor="identification">Documento</label>
+                                <input
+                                    value={this.state.usuario.identification}
+                                    id="identification"
+                                    onChange={(e) => {
+                                        let val = e.target.value;
+                                        this.setState((prevState) => {
+                                            let usuario = Object.assign({}, prevState.usuario);
+                                            usuario.identification = val;
+                                            return { usuario };
+                                        });
+                                    }}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="identification">Fecha de Nacimiento</label>
+                                <Calendar value={this.state.usuario.birthDate} onChange={(e) => {
 
-                            <label className='Registro-label'>Fecha de Nacimiento:</label>
-                            <br />
-                            <Calendario />
-                            <br />
-                            <label className='Registro-label'>Tipo de Usuario:</label>
-                            <br />
+                                    let val = e.value;
+                                    this.setState((prevState) => {
+                                        let usuario = Object.assign({}, prevState.usuario);
+                                        usuario.birthDate = val;
+                                        return { usuario };
+                                    });
+                                }} showIcon={true} />
 
-                            <RadioButtons />
+                            </div>
+                        </form>
 
-                            <label className='Registro-label'>Email:</label>
-                            <input className='col-12' placeholder="email"></input>
-
-                            <label className='Registro-label'>Contraseña:</label>
-                            <input className='col-12' placeholder="password"></input>
-
-
-                            <button className='Boton-registro' type='submit'>Resgistro</button>
+                        <div className="form-group">
+                            <button label="Guardar" onClick={this.registrar}>
+                                Registrate!
+                            </button>
                         </div>
+                    </div>
 
-                    </form>
                 </Dialog>
                 {/* <Growl ref={(el) => this.growl = el} /> */}
             </div >
         );
     }
 
-    showSaveDialog() {
+    showRegistrationDialog() {
         this.setState({
-            visible: true,
-
+            visible: true
         });
 
     }
