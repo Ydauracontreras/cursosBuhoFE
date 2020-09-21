@@ -4,11 +4,10 @@ import { Dialog } from "primereact/dialog";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Menubar } from "primereact/menubar";
-
+import "./Login.css";
 import "primeflex/primeflex.css";
-import "../Modales.css";
 import { AuthenticationService } from "../../service/AuthenticationService";
-import { AlertService } from "../../service/AlertService"
+import { AlertService } from "../../service/AlertService";
 
 export default class Login extends Component {
   constructor() {
@@ -17,7 +16,7 @@ export default class Login extends Component {
       visible: false,
       usuario: {
         username: null,
-        password: null
+        password: null,
       },
     };
     this.login = this.login.bind(this);
@@ -33,35 +32,37 @@ export default class Login extends Component {
 
   login() {
     AuthenticationService.login(this.state.usuario).then((data) => {
-      AlertService.success('Ingresando!');
+      AlertService.success("Ingresar!");
       this.setState({
         visible: false,
         usuario: {
           username: null,
-          password: null
+          password: null,
         },
       });
     });
   }
-
 
   render() {
     return (
       <div>
         <Menubar model={this.items} />
         <Dialog
-          header="Registro"
           visible={this.state.visible}
           footer={this.footer}
-          style={{ width: "30%", height: "50%" }}
+          style={{ width: "30%", height: "50%", justifyContent: "center" }}
           modal={true}
           onHide={() => this.setState({ visible: false })}
         >
           <div className="col-12">
+            <h2>Iniciar Sesión</h2>
+
             <form id="registro">
               <div className="form-group">
                 <label className="Registro-label">Usuario:</label>
-                <input className="col-12" placeholder="Username"
+                <input
+                  className="col-12"
+                  placeholder="Username"
                   onChange={(e) => {
                     let val = e.target.value;
                     this.setState((prevState) => {
@@ -70,12 +71,14 @@ export default class Login extends Component {
                       return { usuario };
                     });
                   }}
-
                 ></input>
               </div>
               <div className="form-group">
                 <label className="Registro-label">Contraseña:</label>
-                <input className="col-12" type="password" placeholder="Password"
+                <input
+                  className="col-12"
+                  type="password"
+                  placeholder="Password"
                   onChange={(e) => {
                     let val = e.target.value;
                     this.setState((prevState) => {
@@ -85,14 +88,12 @@ export default class Login extends Component {
                     });
                   }}
                 ></input>
-
-
               </div>
             </form>
             <div className="form-group">
               <button className="Boton-registro" onClick={this.login}>
-                Ingresaaaar!
-          </button>
+                Ingresar!
+              </button>
             </div>
           </div>
         </Dialog>
@@ -104,7 +105,6 @@ export default class Login extends Component {
   showLoginDialog() {
     this.setState({
       visible: true,
-
     });
   }
 }

@@ -1,7 +1,8 @@
 .title-container {
-  margin: 1rem;
   font-family: ink free;
   color: aliceblue;
+  padding-top: 1em;
+  text-align: center;
 }
 
 .title-container h1 {

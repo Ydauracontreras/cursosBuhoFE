@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, NavLink } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
@@ -22,16 +22,7 @@ const HeaderPrueba = () => {
       <img className="logo-buho-header" src={Buho} alt="pinturillo" />
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <img
-              className="header-pin-image"
-              src={Pin}
-              alt="header-pin image"
-            ></img>
-            <Categoria></Categoria>
-          </NavDropdown>
-        </Nav>
+        <NavLink href="./categorias">Categorias</NavLink>
         <Form inline>
           <FormControl type="text" placeholder="Cursos" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>

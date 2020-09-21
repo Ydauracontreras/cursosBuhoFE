@@ -1,81 +1,91 @@
-
 .p-menubar.p-component {
-    background-color: transparent;
-    color: #ffffff;
-    border-color: #07c475;
-    font-family: ink free;
-    font-size: 1vw;
-    height: 5.5vh;
-    margin-right: 2vw;
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #07c475;
+  font-size: 1vw;
+  height: 5.5vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 div#pr_id_2 {
-    background-color: white;
+  background-color: #fcf75e;
 }
+
+div#pr_id_2 label {
+  font-family: ink free;
+
+  color: black;
+  font-weight: 600;
+}
+
 .p-dialog-content {
-    background-color: white;
+  background-color: #fcf75e;
+  font-family: ink free;
 }
 body .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-    padding: 0.3em 0.857em;
-    
+  padding: 0.3em 0.857em;
 }
-body .p-menubar .p-menuitem-link .p-menuitem-text{
-    color: white;
+body .p-menubar .p-menuitem-link .p-menuitem-text {
+  color: white;
 }
-body .p-dialog .p-dialog-titlebar{
-    border: 1px solid #0bb971;
-    background-color: #0bb971
+body .p-dialog .p-dialog-titlebar {
+  border: 2px solid #0bb971;
+  background-color: #0bb971;
 }
 
 .p-dialog-titlebar {
-    text-align: center;
-    background-color: dodgerblue;
+  text-align: center;
+  background-color: dodgerblue;
 }
 .p-dialog-content {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-   
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
-.Registro-label{
-    color: rgb(27, 18, 18);
-    font-family: cursive;
-    font-size: 1vw;
+.Registro-label {
+  color: rgb(27, 18, 18);
+  font-family: cursive;
+  font-size: 1vw;
 }
 span.p-calendar.col-12.p-calendar-w-btn {
-    padding-left: 0;
+  padding-left: 0;
 }
 
-.Registro-label-check{
-    padding-left: 1vw;
-    padding-right: 2vw;
-
+.Registro-label-check {
+  padding-left: 1vw;
+  padding-right: 2vw;
 }
 .p-datepicker.p-component.p-input-overlay.p-shadow.p-input-overlay-visible {
-    height: 50vh;
-    margin-top: 20vh;
+  height: 50vh;
+  margin-top: 20vh;
 }
-.Boton-registro{
-    background-color: transparent;
-    color: #000000;
-    border-color: #01a833;
-    font-family: cursive;
-    font-size: 1vw;
-    height: 5.5vh;
-    border-radius: 10%;
-    box-sizing: border-box;
-    margin-left: 11vw;
-    margin-top: 3vh;
-   
+.Boton-registro {
+  background-color: transparent !important ;
+  color: #000000;
+  font-family: cursive;
+  font-size: 1vw;
+  height: 5.5vh;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 3vh;
+  width: 15vw;
 }
 span#pr_id_2_header {
-    font-size: 1.5vw;
+  font-size: 1.5vw;
 }
 div#pr_id_2 {
-    height: 80%;
+  height: 80%;
 }
 .col-12 {
-    font-size: 1vw;
+  font-size: 1vw;
+}
+
+.col-12 h2 {
+  text-align: center;
+  font-weight: 800;
 }
 label.p-radiobutton-label {
-    font-size: 1vw;
+  font-size: 1vw;
 }

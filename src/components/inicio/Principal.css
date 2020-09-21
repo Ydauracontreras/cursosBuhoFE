@@ -1,73 +1,63 @@
-.principal-container{
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-
-.principal-content{
-    display: flex;
+.principal-container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
   justify-content: center;
-    align-items: center;
-
+  align-items: center;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.principal-imagen{
+
+.principal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.principal-imagen {
   margin-right: 5vw;
   margin-left: 5vw;
   float: left;
 }
 
-
-.imagen-estudiantes-principal{
+.imagen-estudiantes-principal {
   width: 50vw;
-  box-shadow:10px 10px 7px rgba(15, 141, 120, 0.2);
-  -moz-box-shadow:10px 10px 7px rgba(15, 141, 120, 0.2);
+  box-shadow: 10px 10px 7px rgba(15, 141, 120, 0.2);
+  -moz-box-shadow: 10px 10px 7px rgba(15, 141, 120, 0.2);
   -webkit-box-shadow: 10px 10px 7px rgba(15, 141, 120, 0.2);
 }
-.principal-postit{
+.principal-postit {
   width: 100%;
   height: 100%;
   float: right;
 }
-.principal-imagen-postit-uno{
+.principal-imagen-postit-uno {
   width: 31vw;
   margin-left: 2vw;
   position: absolute;
   margin-top: 5vh;
 }
-.principal-imagen-postit-dos{
+.principal-imagen-postit-dos {
   width: 25vw;
   margin-top: 5vh;
   margin-right: 6vw;
   position: relative;
 }
-.titulo-postit-inicio{
+.titulo-postit-inicio {
   margin-top: 20vh;
   margin-right: 4vw;
-  margin-left:4vw;
+  margin-left: 4vw;
   position: relative;
   z-index: 15;
   color: #232526;
   font-size: 2.4vw;
   transform: rotate(-6deg);
 }
-ul li img.principal-imagen-postit-dos:hover,ul li img.principal-imagen-postit-dos:focus{
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  position:relative;
-  z-index:5;
-}
-ul li img.principal-imagen-postit-uno:hover,ul li img.principal-imagen-postit-uno:focus{
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-   z-index:5;
-}
-
-

@@ -1,12 +1,20 @@
 import React, { Component } from "react";
-import CategoriaService from "../service/CategoriaService";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import "./Categoria.css";
+import Title from "../commons/title/Title";
+import ProgramacionIcons from "../../assets/icons/pc.svg";
 
-class Categoria extends React.Component {
+import CategoriaService from "../service/CategoriaService";
+import PostIt from "../postIt/PostIt";
+import Programacion from "../../assets/img/categoria-programacion.jpg";
+import BuhoIcons from "../../assets/img/logo_buho.svg";
+export default class Categoria extends Component {
   constructor() {
     super();
     this.state = {
       visible: false,
-      categorias: {},
+      categorias: [],
     };
     this.categoriaService = new CategoriaService();
   }
@@ -14,37 +22,27 @@ class Categoria extends React.Component {
   componentDidMount() {
     this.categoriaService
       .getAll()
-      .then((data) => {
-        console.log(data);
-        this.setState({ categorias: data });
-      }
-      );
-  }
-
-  renderCategorias() {
-    return this.state.categorias.map((categoria) => {
-      return (
-        <tr key={categoria.id}>
-          <td>{categoria.nombre}</td>
-        </tr>
-      );
-    });
+      .then((data) => this.setState({ categorias: data }));
   }
 
   render() {
     return (
       <div className="container-categoria">
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-            </tr>
-          </thead>
-          <tbody>{this.renderCategorias}</tbody>
-        </table>
+        <Title text="CATEGORIAS" />
+        <div className="container-categoria-postit">
+          <Grid container spacing={6}>
+            {this.state.categorias.map((categoria) => (
+              <article className="uno" key={categoria.id}>
+                <PostIt
+                  text={categoria.nombre}
+                  icons={ProgramacionIcons}
+                  categoria={Programacion}
+                />
+              </article>
+            ))}
+          </Grid>
+        </div>
       </div>
     );
   }
 }
-export default Categoria;
