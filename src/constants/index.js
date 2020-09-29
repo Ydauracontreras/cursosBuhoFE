@@ -8,7 +8,7 @@ const prod = {
 //development
 const dev = {
   url: {
-    API_BASE_URL: "http://localhost:8080",
+    API_BASE_URL: " https://qdemy.herokuapp.com/",
   },
 };
 export const config = process.env.NODE_ENV === "development" ? dev : prod;

@@ -1,18 +1,14 @@
 import React from "react";
 import "./PostIt.css";
 
-const PostIt = ({ img, categoria, text, icons }) => {
+const PostIt = (props) => {
+  console.log(props);
   return (
-    <div className="postit-container">
-      <div className="icos-postit-container">
-        <img src={icons} alt="" />
-      </div>
-      <div className="img-categoria-container">
-        <img src={categoria} alt=""></img>
-      </div>
-      <div className="title-postit-container">
-        <h2>{text} </h2>
-      </div>
+    <div className="product">
+      <img src={props.img} />
+      <h2 className="header">{props.nombreDelProducto}</h2>
+      <p className="description"></p>
+      <p className="price">{props.precio}</p>
     </div>
   );
 };

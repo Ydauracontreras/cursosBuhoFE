@@ -3,11 +3,14 @@
   color: #ffffff;
   border-color: #07c475;
   font-size: 1vw;
-  height: 5.5vh;
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 0.5rem;
+  -ms-flex-item-align: end;
 }
 div#pr_id_2 {
   background-color: #fcf75e;

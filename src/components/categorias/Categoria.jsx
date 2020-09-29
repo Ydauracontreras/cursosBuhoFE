@@ -1,14 +1,8 @@
-import React, { Component } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import React, { Component, useState } from "react";
 import "./Categoria.css";
-import Title from "../commons/title/Title";
-import ProgramacionIcons from "../../assets/icons/pc.svg";
-
 import CategoriaService from "../service/CategoriaService";
 import PostIt from "../postIt/PostIt";
-import Programacion from "../../assets/img/categoria-programacion.jpg";
-import BuhoIcons from "../../assets/img/logo_buho.svg";
+
 export default class Categoria extends Component {
   constructor() {
     super();
@@ -28,19 +22,17 @@ export default class Categoria extends Component {
   render() {
     return (
       <div className="container-categoria">
-        <Title text="CATEGORIAS" />
-        <div className="container-categoria-postit">
-          <Grid container spacing={6}>
-            {this.state.categorias.map((categoria) => (
-              <article className="uno" key={categoria.id}>
+        <div className="container-categoria">
+          <div className="container">
+            {this.state.categorias.map((categoria) => {
+              return (
                 <PostIt
-                  text={categoria.nombre}
-                  icons={ProgramacionIcons}
-                  categoria={Programacion}
+                  nombreDelProducto={categoria.nombre}
+                  img={categoria.imagen}
                 />
-              </article>
-            ))}
-          </Grid>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

@@ -1,8 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
-import React from 'react';
+import React from "react";
+import Categorias from "../categorias/Categoria";
 
-import './CursosDestacados.css';
+import "./CursosDestacados.css";
 
 /* import postitAmarillo from '../../assets/img/pos_amarillo.svg';
  import postitAzul from '../../assets/img/posAzul.svg';
@@ -11,12 +12,9 @@ import './CursosDestacados.css';
 
 const CursosD = () => {
   return (
-    
     <div>
-      Hola
+      <Categorias />
     </div>
-       
-     
   );
 };
 
