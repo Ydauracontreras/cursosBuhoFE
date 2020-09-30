@@ -40,7 +40,7 @@ export const AuthenticationService = {
         if (!cu)
             return null;
 
-        JSON.parse(cu);
+        return JSON.parse(cu);
     }
 
 }

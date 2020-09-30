@@ -41,6 +41,7 @@ export default class Login extends Component {
           password: null
         },
       });
+      window.location = '/cursos';
     });
   }
 

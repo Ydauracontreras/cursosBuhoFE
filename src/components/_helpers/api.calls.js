@@ -24,9 +24,10 @@ restAPI.interceptors.request.use((config) => {
     
     //si hay user, le pongo el token
     if (currentUser && currentUser.token) {
-        set(config, 'headers.token', currentUser.token);
+        config.headers.Authorization  = "Bearer " + currentUser.token;
+        //set(config, 'headers.token', currentUser.token);
     }
-
+    
     return config;
 });
 
