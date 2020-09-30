@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Pin from "../../../assets/img/pin.png";
-import Buho from "../../../assets/img/buho.png";
+import Buho from "../../../assets/img/logo_buho.svg";
 import "../header/header.css";
 import Login from "../../modales/login/Login";
 import Registro from "../../modales/registro/Registro.js";

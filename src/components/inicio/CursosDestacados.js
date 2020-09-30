@@ -12,7 +12,11 @@ import "./CursosDestacados.css";
 
 const CursosD = () => {
   return (
-    <div>
+    <div className="categorias-destacadas">
+      <div className="catDes-titulo">
+        <h1>
+          Categorias Destacadas
+          </h1>      </div>
       <Categorias />
     </div>
   );

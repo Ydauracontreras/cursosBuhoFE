@@ -7,6 +7,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+
 }
 
 img.avatar {
@@ -16,17 +17,21 @@ img.avatar {
 
 .login-container label {
   font-size: 1.5em;
-  font-family: ink free;
-  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
   font-weight: 600;
 }
 
 button {
   background: transparent !important;
   margin-top: 2em;
-  color: #ffffff;
+  color: black;
   border-color: #07c475 !important;
-  font-family: ink free;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5em;
   font-weight: 600;
+}
+.col-12{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }

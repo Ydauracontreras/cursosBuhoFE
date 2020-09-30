@@ -1,6 +1,6 @@
 .p-menubar.p-component {
   background-color: transparent;
-  color: #ffffff;
+  color: black;
   border-color: #07c475;
   font-size: 1vw;
   display: flex;
@@ -12,32 +12,61 @@
   padding: 0.5rem;
   -ms-flex-item-align: end;
 }
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
 div#pr_id_2 {
-  background-color: #fcf75e;
+  background-color: white;
+  height: 80%;
 }
 
 div#pr_id_2 label {
-  font-family: ink free;
+  font-family: Arial, Helvetica, sans-serif;
 
   color: black;
   font-weight: 600;
 }
+img.rounded-circle {
+  height: 12vh;
+}
+.logo-modales {
+  
+  margin-left: 5vw;
+}
+div.login-register{
+text-align: center;
+}
+div.logo-fb-google{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25%;
+}
+img.fb{
+  width: 3vw;
+}
+img.google{
+  width: 3vw;
+}
 
 .p-dialog-content {
-  background-color: #fcf75e;
-  font-family: ink free;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
   padding: 0.3em 0.857em;
 }
 body .p-menubar .p-menuitem-link .p-menuitem-text {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 body .p-dialog .p-dialog-titlebar {
   border: 2px solid #0bb971;
   background-color: #0bb971;
 }
-
+.p-dialog-header{
+  margin-right: 1vw;
+}
 .p-dialog-titlebar {
   text-align: center;
   background-color: dodgerblue;
@@ -50,7 +79,7 @@ body .p-dialog .p-dialog-titlebar {
 .Registro-label {
   color: rgb(27, 18, 18);
   font-family: cursive;
-  font-size: 1vw;
+  font-size: 0.8vw;
 }
 span.p-calendar.col-12.p-calendar-w-btn {
   padding-left: 0;
@@ -79,7 +108,11 @@ span#pr_id_2_header {
   font-size: 1.5vw;
 }
 div#pr_id_2 {
-  height: 80%;
+  height: 40%;
+}
+div#pr_id_2.p-dialog.p-component.p-dialog-enter-done{
+  height: 80% !important;
+  width: 25% !important;
 }
 .col-12 {
   font-size: 1vw;

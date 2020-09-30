@@ -1,11 +1,12 @@
 .header-container {
   display: flex;
-  padding: 1rem;
+ 
+  z-index: 10;
 }
 
 .logo-buho-header {
-  width: 3vw;
-  margin-top: 0;
+  width: 10vw;
+  
 }
 
 div#basic-navbar-nav a {
@@ -17,13 +18,11 @@ div#basic-navbar-nav a {
 
 .container-acceso {
   display: flex;
-  align-items: flex-end;
-  left: 25%;
+  
+  margin-left: 35rem;
 }
 
-form.form-inline {
-  margin-right: 15vw;
-}
+
 
 button.btn.btn-outline-success {
   margin-right: 3vw;

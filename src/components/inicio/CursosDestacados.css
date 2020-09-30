@@ -1,4 +1,11 @@
-.carrusel-cursos{
 
-    width: 100vw;
+.categorias-destacadas{
+    background-color: black;
+    z-index: 1;
+}
+.cursos-destacados-content {
+    margin-top: 5%;
+}
+.catDes-titulo{
+    padding-top: 5%;
 }
