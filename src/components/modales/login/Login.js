@@ -67,7 +67,7 @@ export default class Login extends Component {
             </div>
             <h2>Iniciar Sesión</h2>
 
-            <form id="registro">
+            <form id="login">
               <div className="form-group">
                 <label className="Registro-label">Usuario:</label>
                 <input

@@ -2,13 +2,7 @@
   background-color: #ffffff;
   width: 80%;
 }
-.p-dialog-header {
-  width: 21vw;
-  background-color: white;
-  position: absolute;
-  margin-bottom: 1vh;
-  z-index: 1;
- }
+
 .registro-container {
 
   justify-content: center;
