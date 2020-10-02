@@ -10,6 +10,9 @@
 
 }
 
+.logo-modal-login {
+  margin-left: 40%;
+}
 
 img.avatar {
   border-radius: 50%;
@@ -35,4 +38,7 @@ button {
 .col-12{
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+}
+div.logo-fb-google{
+  margin-bottom: 2vh;
 }

@@ -57,12 +57,12 @@ export default class Login extends Component {
         <Dialog
           visible={this.state.visible}
           footer={this.footer}
-          style={{ width: "30%", height: "50%", justifyContent: "center" }}
+          style={{ width: "30%", height: "60%", justifyContent: "center" }}
           modal={true}
           onHide={() => this.setState({ visible: false })}
         >
           <div className="col-12">
-<div className="logo-modales">
+<div className="logo-modal-login">
             <Image  src={Logo} roundedCircle />
             </div>
             <h2>Iniciar Sesión</h2>
