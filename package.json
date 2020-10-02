@@ -10,7 +10,7 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "node-sass": "^4.14.1",
-    "primeflex": "^2.0.0-rc.1",
+    "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
     "primereact": "^5.0.0-rc.1",
     "randomcolor": "^0.6.2",

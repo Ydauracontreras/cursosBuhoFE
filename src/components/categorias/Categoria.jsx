@@ -1,7 +1,9 @@
 import React, { Component, useState } from "react";
 import "./Categoria.css";
 import CategoriaService from "../service/CategoriaService";
-import PostIt from "../postIt/PostIt";
+import Categorias from "../categoriasCard/Categorias";
+import "primeflex/primeflex.css";
+import Header from "../commons/header/header";
 
 export default class Categoria extends Component {
   constructor() {
@@ -22,17 +24,18 @@ export default class Categoria extends Component {
   render() {
     return (
       <div className="container-categoria">
-        <div className="container-categoria">
-          <div className="container">
-            {this.state.categorias.map((categoria) => {
-              return (
-                <PostIt
-                  nombreDelProducto={categoria.nombre}
+        <Header />
+        <div className="p-grid">
+          {this.state.categorias.map((categoria) => {
+            return (
+              <div className="p-col-12 p-md-6 p-lg-3">
+                <Categorias
                   img={categoria.imagen}
+                  nombreCategoria={categoria.nombre}
                 />
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     );

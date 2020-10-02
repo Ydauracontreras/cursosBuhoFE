@@ -1,7 +1,16 @@
 .container-categoria {
+  display: flex;
   width: 100%;
-  justify-content: center;
-  height: 100vh;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.p-grid {
+  display: flex;
+  /* margin-right: 3rem; */
+  /* margin-left: 3rem; */
+  /* margin-top: 3rem; */
   align-items: center;
-  background-color: black;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto;
 }

@@ -14,10 +14,8 @@ const CursosD = () => {
   return (
     <div className="categorias-destacadas">
       <div className="catDes-titulo">
-        <h1>
-          Categorias Destacadas
-          </h1>      </div>
-      <Categorias />
+        <h1>Categorias Destacadas</h1>{" "}
+      </div>
     </div>
   );
 };
