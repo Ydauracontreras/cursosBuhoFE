@@ -4,7 +4,7 @@ import { Dialog } from "primereact/dialog";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Menubar } from "primereact/menubar";
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
 import "./Login.css";
 import "primeflex/primeflex.css";
 import { AuthenticationService } from "../../service/AuthenticationService";
