@@ -14,7 +14,10 @@ import Calendario from '../../Calendar';
 import { RadioButtons } from '../../RadioButtons';
 import { AuthenticationService } from "../../service/AuthenticationService";
 import "./Registro.css";
-import { AlertService } from "../../service/AlertService"
+import { AlertService } from "../../service/AlertService";
+import Logo from '../../../assets/img/buho.jpg';
+import Image from 'react-bootstrap/Image';
+
 
 export default class Registro extends Component {
 
@@ -74,9 +77,14 @@ export default class Registro extends Component {
             <div  >
 
                 <Menubar model={this.items} />
-                <Dialog header="Registro" visible={this.state.visible} footer={this.footer} style={{ width: "30%", height: "80%" }} modal={true} onHide={() => this.setState({ visible: false })}>
+                <Dialog visible={this.state.visible} footer={this.footer} style={{ width: "20%", height: "80%" }} modal={true} onHide={() => this.setState({ visible: false })}>
+                <div className="col-12">
+                <div className="logo-modales">
+            <Image  src={Logo} roundedCircle />
+            </div>
+            <h2>Registro</h2>
                     <div className="registro-container">
-                        <form id="empleado-form" className="registro-dialog">
+                        <form id="registro" className="registro-dialog">
                             <div className="form-group">
                                 <label htmlFor="nombre">Nombre:</label>
                                 <input
@@ -129,7 +137,7 @@ export default class Registro extends Component {
 
                                 <label className="Registro-label">Tipo Usuario:</label>
                                 <div className="register-user-type">
-                                    <input
+                                    <input className="register-doc-type"
                                         type="radio"
                                         inputId="rb2"
                                         name="Estudiante"
@@ -147,7 +155,7 @@ export default class Registro extends Component {
                                         Estudiante
                                     </label>
 
-                                    <input
+                                    <input className="register-doc-type"
                                         type="radio"
                                         inputId="rb2"
                                         name="Docente"
@@ -188,8 +196,8 @@ export default class Registro extends Component {
                             </div>
                             <div className="form-group">
                                 <label className="Registro-label">Tipo Documento:</label>
-                                <div>
-                                    <input
+                                <div className="register-doc-type">
+                                    <input className="radioB-doc"
                                         type="radio"
                                         inputId="rb1"
                                         name="DNI"
@@ -207,6 +215,7 @@ export default class Registro extends Component {
                                         DNI
                                     </label>
                                     <input
+                                    className="radioB-doc"
                                         type="radio"
                                         inputId="rb2"
                                         name="Pasaporte"
@@ -240,6 +249,9 @@ export default class Registro extends Component {
                                 />
                             </div>
                             <div className="form-group">
+                                <div className="calendario-registro">
+
+                                
                                 <label htmlFor="identification">Fecha de Nacimiento</label>
                                 <Calendar value={this.state.usuario.birthDate} onChange={(e) => {
 
@@ -250,17 +262,17 @@ export default class Registro extends Component {
                                         return { usuario };
                                     });
                                 }} showIcon={true} />
-
+</div>
                             </div>
                         </form>
 
                         <div className="form-group">
-                            <button label="Guardar" onClick={this.registrar}>
+                            <button className="register-button" label="Guardar" onClick={this.registrar}>
                                 Registrate!
                             </button>
                         </div>
                     </div>
-
+</div>
                 </Dialog>
                 {/* <Growl ref={(el) => this.growl = el} /> */}
             </div >
