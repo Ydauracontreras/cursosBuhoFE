@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, NavLink } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
@@ -13,32 +13,25 @@ import Registro from "../../modales/registro/Registro.js";
 import Categoria from "../../categorias/Categoria";
 
 const HeaderPrueba = () => {
-  // function handleClick(){
-  //   history.Push('/register')
-  //   }
-
   return (
     <Navbar expand="lg">
-      <img className="logo-buho-header" src={Buho} alt="pinturillo" />
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <img
-              className="header-pin-image"
-              src={Pin}
-              alt="header-pin image"
-            ></img>
-            <Categoria></Categoria>
-          </NavDropdown>
-        </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Cursos" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form>
-        <Login></Login>
-        <Registro></Registro>
-      </Navbar.Collapse>
+      <div className="header-container">
+        <img className="logo-buho-header" src={Buho} alt="pinturillo" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <NavLink href="./categorias">BUHO</NavLink>
+          <NavLink href="./categorias">Categorias</NavLink>
+          <div className="container-acceso">
+            <NavLink href="">
+              <Login></Login>
+            </NavLink>
+            <NavLink href="">
+              <Registro></Registro>
+            </NavLink>
+          </div>
+        </Navbar.Collapse>
+      </div>
     </Navbar>
   );
 };

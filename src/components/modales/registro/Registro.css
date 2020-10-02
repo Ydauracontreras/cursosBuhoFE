@@ -1,42 +1,26 @@
 .registro-dialog {
-  background: #232526; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #414345,
-    #232526
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #414345,
-    #232526
-  );
-}
-.registro-container {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  background: #232526; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #414345,
-    #232526
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #414345,
-    #232526
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  align-content: center;
-  background-color: #232526;
-  color: #ffffff;
+  background-color: #ffffff;
+  width: 80%;
 }
 
+.registro-container {
+
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.logo-modales {
+  margin-left: 40%;
+  margin-top: 2vh;
+}
+
+
 .registro-container label {
-  font-family: ink free;
-  font-size: 1em;
-  color: #ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: black;
+  font-weight: 600;
 }
 
 .user-name {
@@ -47,8 +31,7 @@
 }
 
 .user-name input {
-  width: 300px;
-  height: 50px;
+  width: 50%;
   border: 2px solid grey;
   border-radius: 13px;
 }
@@ -57,11 +40,14 @@
   display: flex;
   align-items: center;
   align-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  width: 70%;
 }
 
+
 label.registro-label {
-  margin-top: 40px;
+  margin-top: 5vh;
 }
 
 .register-user-type input {
@@ -70,7 +56,17 @@ label.registro-label {
   border: 2px solid grey;
   border-radius: 13px;
 }
+input.radioB-doc{
+  width: 2vw;
+}
 
+.register-doc-type {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2.1vw;
+  align-items: center;
+  width: 70%;
+}
 
 .register-identification-type {
   display: flex;
@@ -84,18 +80,8 @@ input {
   height: 50px;
   border: 2px solid grey;
   border-radius: 13px;
-}
-
-form#empleado-form {
-  width: 100%;
-  align-items: center;
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-  font-family: ink free;
-}
-
-.registro-pais-label {
+  height: 3vh;
+  width: 80%;
 }
 
 select {
@@ -108,20 +94,33 @@ select {
 
 option {
   font-family: ink free;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
-.register button {
+button.register-button {
   height: 50px;
-  width: 350px;
+  width: 50%;
   background: transparent;
-  border: 2px solid green;
+  border: 2px solid rgb(255, 102, 1);
   border-radius: 6px;
   margin: 28px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 1.5em;
   font-weight: 600;
-  font-family: ink free;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 1px;
+  margin-left: 7vw;
+}
+
+label.p-radiobutton-label{
+  font-size: 0.6rem;
+}
+
+select{
+  height: 3vh;
+  width: 80%;
+}
+form#registro {
+  margin-left: 20%;
 }
